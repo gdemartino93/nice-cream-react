@@ -146,13 +146,15 @@ p {
   display: -webkit-grid;
   gap: 1.5rem;
 }
-.menu{
 
-}
 .menu > ul{
   display: flex;
   justify-content: space-evenly;
 }
 .menu  li:hover{
   border-bottom: 3px solid var(--secondary-blue);
+}
+
+.gelato{
+  border: 1px solid black;
 }
