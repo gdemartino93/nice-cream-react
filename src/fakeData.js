@@ -28,6 +28,36 @@ const data = [
     prezzo: 130,
     categoria: "stick",
   },
+  {
+    id: 6,
+    nome: "Banana Joe",
+    img:
+      "https://res.cloudinary.com/thomasdea/image/upload/v1612825535/react-api-course/gelateria/gelato-14_ga3apr.jpg",
+    decrizione:
+      "8-bit hashtag vaporware fixie sartorial normcore meggings pour-over cliche",
+    prezzo: 130,
+    categoria: "stick",
+  },
+  {
+    id: 6,
+    nome: "Banana Joe",
+    img:
+      "https://res.cloudinary.com/thomasdea/image/upload/v1612825535/react-api-course/gelateria/gelato-14_ga3apr.jpg",
+    decrizione:
+      "8-bit hashtag vaporware fixie sartorial normcore meggings pour-over cliche",
+    prezzo: 130,
+    categoria: "stick",
+  },
+  {
+    id: 6,
+    nome: "Banana Joe",
+    img:
+      "https://res.cloudinary.com/thomasdea/image/upload/v1612825535/react-api-course/gelateria/gelato-14_ga3apr.jpg",
+    decrizione:
+      "8-bit hashtag vaporware fixie sartorial normcore meggings pour-over cliche",
+    prezzo: 130,
+    categoria: "stick",
+  },
 ];
 
 export default data;
