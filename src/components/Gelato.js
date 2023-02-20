@@ -2,9 +2,15 @@ import React from 'react'
 
 const Gelato = (el) => {
   return (
-    <div className='gelato'>
-        <h5>{el.nome}</h5>
-    </div>
+    <section className='gelato col-5 d-flex'>
+        <div className='gelato-img'>
+            <img src={el.img}></img>
+        </div>
+        <div className='gelato-body'>
+
+        </div>
+        
+    </section>
   )
 }
 

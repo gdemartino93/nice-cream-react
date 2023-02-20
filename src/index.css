@@ -157,4 +157,23 @@ p {
 
 .gelato{
   border: 1px solid black;
+  /* debug */
+  height: 150px;
+}
+.gelato-img{
+  width: 30%;
+  height: 85%;
+  margin: auto 0;
+  /* deb */
+  background: red;
+}
+.gelato-img img{
+  width: 100%;
+  height: 100%;
+  border: 6px solid white;
+  border-radius: 5px;
+
+}
+.gelato-body{
+
 }

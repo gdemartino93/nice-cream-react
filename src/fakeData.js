@@ -29,7 +29,7 @@ const data = [
     categoria: "stick",
   },
   {
-    id: 6,
+    id: 8,
     nome: "Banana Joe",
     img:
       "https://res.cloudinary.com/thomasdea/image/upload/v1612825535/react-api-course/gelateria/gelato-14_ga3apr.jpg",
@@ -39,7 +39,7 @@ const data = [
     categoria: "stick",
   },
   {
-    id: 6,
+    id: 9,
     nome: "Banana Joe",
     img:
       "https://res.cloudinary.com/thomasdea/image/upload/v1612825535/react-api-course/gelateria/gelato-14_ga3apr.jpg",
@@ -49,7 +49,7 @@ const data = [
     categoria: "stick",
   },
   {
-    id: 6,
+    id: 12,
     nome: "Banana Joe",
     img:
       "https://res.cloudinary.com/thomasdea/image/upload/v1612825535/react-api-course/gelateria/gelato-14_ga3apr.jpg",

@@ -16,7 +16,7 @@ const Menu = () => {
                 return <li key={el.id}> { el.toUpperCase() }</li>
             })}
         </ul>
-        <div className='row row-cols-2 justify-content-around gap-3'>
+        <div className=' my-5 row row-cols-2 justify-content-center gap-5'>
           {product.map(el => <Gelato key={el.id} {...el} />)}
         </div>
     </div>
