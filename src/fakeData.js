@@ -11,7 +11,7 @@ const data = [
   },
   {
     id: 2,
-    nome: "Testicolo di Orco",
+    nome: "Gelato ASD",
     img:
       "https://res.cloudinary.com/thomasdea/image/upload/v1612825540/react-api-course/gelateria/gelato-3_nnj0cb.jpg",
     decrizione: " Skateboard dreamcatcher bicycle rights affogato, YOLO edison",
