@@ -1,16 +1,22 @@
 import React, { useState } from 'react';
-import data from '../fakeData';
+import axios from 'axios';
 import Gelato from './Gelato';
 
+axios.defaults.baseURL ='https://react-corso-api.netlify.app/.netlify/functions/'
+
 const Menu = () => {
-  const [products, setProducts] = useState(data);
+  const [products, setProducts] = useState();
   // crea un nuovo array di elementi unici dall'array product
-  let categories = Array.from(new Set(products.map(el => el.categoria)));
+  const [categories , setCategories] = useState([]);
+  // let categories = Array.from(new Set(products.map(el => el.categoria)));
   // aggiunge all come primo elemento dell'array
   categories.unshift('all');
   const [selected, setSelected] = useState(0);
   // questo state lo usiamo per creare un array dei prodotti selezionati in base alla categoria
   const [filterProducts, setFilterProducts] = useState(products);
+  // state loading ed error
+  const [isLoading , setIsLoading] = useState(true);
+  const [isError , setIsError] = useState(false);
 
   const filterProductFunction = (category, index) => {
     // passo l'index per la selected
@@ -23,17 +29,38 @@ const Menu = () => {
       setFilterProducts(products.filter(el => el.categoria === category ? el : ""))
     }
   }
+React.useEffect(()=>{
+// funzione eseguita immediatamente tra parentesi 
+  (async () => {
+    setIsError(false);
+    setIsLoading(true);
+    try {
+      const response = await axios.get('gelateria');
+      setProducts(response.data.data.default);
+      setFilterProducts(response.data.data.default);
+      setIsLoading(false)
+      console.log(products);
+    }catch(err){
+      setIsError(true);
+      setIsLoading(true);
+      console.log(err);
+    }
 
+  })();
+},[])
   return (
     <div className='menu'>
-      <ul>
+      {
+        (!isLoading && !isError) ? <>      <ul>
         {categories.map((el, index) => {
           return <li onClick={() => filterProductFunction(el, index)} key={el.id} className={index == selected ? "underline" : "no"}> {el.toUpperCase()}</li>
         })}
       </ul>
       <div className=' my-5 row row-cols-2 justify-content-center gap-5'>
         {filterProducts.map(el => <Gelato key={el.id} {...el} />)}
-      </div>
+      </div></> : (!isLoading && isError) ? <h1 className='text-danger' style={{ fontSize : "100px" , textAlign : "center" }} > There is an error!</h1>: <h1 className='text-success' style={{ fontSize : "100px" , textAlign : "center" }}> Loading... </h1>
+      }
+
     </div>
 
   )
