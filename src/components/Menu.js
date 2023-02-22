@@ -8,12 +8,13 @@ const Menu = () => {
     let categories = Array.from(new Set(product.map(el => el.categoria)));
     // aggiunge all come primo elemento dell'array
     categories.unshift('All');
+    const [selected , setSelected] = useState(0);
 
   return (
     <div className='menu'>
         <ul>
-            {categories.map(el => {
-                return <li key={el.id}> { el.toUpperCase() }</li>
+            {categories.map((el,index) => {
+                return <li key={el.id} className={index == selected ? "underline" : "no"}> { el.toUpperCase() }</li>
             })}
         </ul>
         <div className=' my-5 row row-cols-2 justify-content-center gap-5'>
