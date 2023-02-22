@@ -158,9 +158,14 @@ p {
   gap: 1.5rem;
 }
 
-.menu > ul{
+.menu{
+ ul{
   display: flex;
   justify-content: space-evenly;
+ }
+  li{
+    cursor: pointer;
+  }
 }
 .underline{
   border-bottom: 3px solid var(--secondary-blue);
@@ -169,9 +174,14 @@ p {
 .gelato{
   background: #def0f3;
   min-width: 350px;
-  /* debug */
+  border-radius: 10px;
 
-  border: 1px solid black;
+  &:hover{
+    background-color: var(--light-blue);
+    transform: scale(1.01);
+    cursor: pointer;
+    box-shadow: 10px 10px 10px 1px rgba(255, 255, 255, 0.5);
+  }
 
   .gelato-img{
     width: 30%;

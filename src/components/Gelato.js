@@ -7,12 +7,12 @@ const Gelato = (el) => {
             <img src={ el.img } alt={el.img}></img>
         </div>
         <div className='gelato-body'>
-            <div className='gelato-body-header border-bottom p-2'>
+            <div className='gelato-body-header p-2'>
                 <span className='badge-price'>
                     { (el.prezzo / 100).toFixed(2) } &euro;
                 </span>
                 <span>{ el.nome }</span>
-                <h6 className='gelato-category'>{ el.categoria }</h6>
+                <h6 className='gelato-category border-bottom'>{ el.categoria }</h6>
             </div>
             <div className='gelato-body-body'>
                 <p >{ el.decrizione }</p>
