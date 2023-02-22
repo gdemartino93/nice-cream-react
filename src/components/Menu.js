@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import Gelato from './Gelato';
+import Loader from './Loader';
 
 axios.defaults.baseURL ='https://react-corso-api.netlify.app/.netlify/functions/'
 
@@ -65,7 +66,7 @@ React.useEffect(()=>{
       </ul>
       <div className=' my-5 row row-cols-2 justify-content-center gap-5'>
         {filterProducts.map(el => <Gelato key={el.id} {...el} />)}
-      </div></> : (!isLoading && isError) ? <h1 className='text-danger' style={{ fontSize : "100px" , textAlign : "center" }} > There is an error!</h1>: <h1 className='text-success' style={{ fontSize : "100px" , textAlign : "center" }}> Loading... </h1>
+      </div></> : (!isLoading && isError) ? <h1 className='text-danger' style={{ fontSize : "100px" , textAlign : "center" }} > There is an error!</h1> : <Loader />
       }
 
     </div>
