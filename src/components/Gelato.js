@@ -4,7 +4,7 @@ const Gelato = (el) => {
   return (
     <section className='gelato col-12 mx-auto col-md-10 col-lg-5 d-flex'>
         <div className='gelato-img'>
-            <img src={ el.img }></img>
+            <img src={ el.img } alt={el.img}></img>
         </div>
         <div className='gelato-body'>
             <div className='gelato-body-header border-bottom p-2'>

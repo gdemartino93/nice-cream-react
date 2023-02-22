@@ -6,14 +6,14 @@ axios.defaults.baseURL ='https://react-corso-api.netlify.app/.netlify/functions/
 
 const Menu = () => {
   const [products, setProducts] = useState();
-  // crea un nuovo array di elementi unici dall'array product
+
   const [categories , setCategories] = useState([]);
   // let categories = Array.from(new Set(products.map(el => el.categoria)));
-  // aggiunge all come primo elemento dell'array
-  categories.unshift('all');
+
   const [selected, setSelected] = useState(0);
   // questo state lo usiamo per creare un array dei prodotti selezionati in base alla categoria
   const [filterProducts, setFilterProducts] = useState(products);
+  
   // state loading ed error
   const [isLoading , setIsLoading] = useState(true);
   const [isError , setIsError] = useState(false);
@@ -38,8 +38,15 @@ React.useEffect(()=>{
       const response = await axios.get('gelateria');
       setProducts(response.data.data.default);
       setFilterProducts(response.data.data.default);
-      setIsLoading(false)
-      console.log(products);
+        // creo un array di categorie uniche dalla risposta dell'API.
+      const newCategories = Array.from(new Set(response.data.data.default.map(el => el.categoria)));
+        // aggiunge all come primo elemento dell'array
+      newCategories.unshift('all');
+      setCategories(newCategories);
+
+      setIsError(false);
+      setIsLoading(false);
+
     }catch(err){
       setIsError(true);
       setIsLoading(true);
